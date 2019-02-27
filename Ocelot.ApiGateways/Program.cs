@@ -16,7 +16,7 @@ namespace Ocelot.ApiGateways {
 
         public static IWebHostBuilder CreateWebHostBuilder (string[] args) =>
             WebHost.CreateDefaultBuilder (args)
-            .UseUrls ("http://localhost:6000")
+            .UseUrls ("http://localhost:60000")
             .UseStartup<Startup> ();
     }
 }
