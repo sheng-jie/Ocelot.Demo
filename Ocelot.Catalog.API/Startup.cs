@@ -22,7 +22,7 @@ namespace Ocelot.Catalog.API
             services.AddAuthentication("Bearer")
                 .AddJwtBearer("Bearer", option =>
                 {
-                    option.Authority = "http:/localhost:6003";
+                    option.Authority = "http://localhost:6003";
                     option.RequireHttpsMetadata = false;
                     option.Audience = "catalog.api";
                 });
