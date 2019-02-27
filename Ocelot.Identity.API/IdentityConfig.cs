@@ -20,7 +20,8 @@ namespace Ocelot.Identity.API
         {
             return new List<ApiResource>
             {
-                new ApiResource("api1", "My API")
+                new ApiResource("catalog.api", "Catalog API"),
+                new ApiResource("basket.api", "Basket API"),
             };
         }
 
@@ -52,7 +53,7 @@ namespace Ocelot.Identity.API
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = {"api1"}
+                    AllowedScopes = { "catalog.api", "basket.api" }
                 },
 
                 // resource owner password grant client
@@ -65,7 +66,7 @@ namespace Ocelot.Identity.API
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = {"api1"}
+                    AllowedScopes = { "catalog.api", "basket.api" }
                 },
 
                 // OpenID Connect hybrid flow and client credentials client (MVC)
@@ -89,7 +90,8 @@ namespace Ocelot.Identity.API
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "api1"
+                        "catalog.api",
+                        "basket.api"
                     },
                     AllowOfflineAccess = true
                 },
@@ -113,7 +115,8 @@ namespace Ocelot.Identity.API
                     {
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
-                        "api1"
+                        "catalog.api",
+                        "basket.api"
                     },
                     AllowOfflineAccess = true
 
