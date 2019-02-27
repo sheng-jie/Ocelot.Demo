@@ -1,0 +1,34 @@
+{
+  "services": [
+    {
+      "ID": "catalog.api",
+      "Name": "catalog.api",
+      "Tags": [
+        "catalog",
+        "Api"
+      ],
+      "Address": "127.0.0.1",
+      "Port": 6002,
+      "Check": {
+        "HTTP": "http://127.0.0.1:6002/Api/health",
+        "Interval": "10s"
+      }
+    },
+    {
+      "id": "basket.api",
+      "name": "basket.api",
+      "tags": [
+        "basket",
+        "Api"
+      ],
+      "Address": "127.0.0.1",
+      "Port": 6001,
+      "Check": [
+        {
+          "HTTP": "http://127.0.0.1:6001/Api/health",
+          "Interval": "10s"
+        }
+      ]
+    }
+  ]
+}
