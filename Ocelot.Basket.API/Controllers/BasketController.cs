@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ocelot.Basket.API.Controllers {
     [Route ("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BasketController : ControllerBase {
         private static List<CustomerBasket> _customerBaskets;
 
