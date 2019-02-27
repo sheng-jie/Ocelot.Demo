@@ -41,10 +41,10 @@ namespace Ocelot.Identity.API
                 app.UseHsts();
             }
 
-            app.UseIdentityServer();
-
             app.UseHttpsRedirection();
-            app.UseMvc();
+            app.UseIdentityServer();
+            app.UseStaticFiles();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
