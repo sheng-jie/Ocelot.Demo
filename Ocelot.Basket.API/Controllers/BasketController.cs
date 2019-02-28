@@ -39,6 +39,12 @@ namespace Ocelot.Basket.API.Controllers {
             };
         }
 
+        [HttpGet]
+        [Route("[action]")]
+        public ActionResult<IEnumerable<CustomerBasket>> Index(){
+            return _customerBaskets;
+        }
+
         // GET api/basket/5
         [HttpGet ("{id}")]
         public ActionResult<CustomerBasket> Get (int id) {

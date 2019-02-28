@@ -20,7 +20,8 @@ namespace Ocelot.Catalog.API.Controllers {
         public List<CatalogItem> CatalogItems { get; set; }
         // GET api/catalog
         [HttpGet]
-        public ActionResult<IEnumerable<CatalogItem>> GetAll () {
+        [Route("[action]")]
+        public ActionResult<IEnumerable<CatalogItem>> Index () {
             return _catalogItems;
         }
 
