@@ -11,7 +11,7 @@ client_id:client
 client_secret:secret
 grant_type:client_credentials
 ```
-5. Use postman to visist the `localhost:60000/index` with the token.
+5. Use postman to visist the `localhost:60000/index` with the token for testing Ocelot request aggregate.
 ```
 Authorization Bearer {token}
 ```
