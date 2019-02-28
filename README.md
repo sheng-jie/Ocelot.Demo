@@ -20,5 +20,5 @@ Authorization:Bearer {token}
 
 For more detail visis ：
 1. [.NET Core + Ocelot + IdentityServer4 + Consul 基础架构实现](https://www.cnblogs.com/Zhang-Xiang/p/10437488.html).
-2. [APIGatewayDemo][https://github.com/catcherwong-archive/APIGatewayDemo]
+2. [APIGatewayDemo](https://github.com/catcherwong-archive/APIGatewayDemo)
 
