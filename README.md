@@ -13,7 +13,7 @@ grant_type:client_credentials
 ```
 5. Use postman to visist the `localhost:60000/index` with the token for testing Ocelot request aggregate.
 ```
-Authorization Bearer {token}
+Authorization:Bearer {token}
 ```
 6. Use postman to send a request to `localhost:60000/admin/configuration` for getting or modifying ocelot configuration at runtime.
 (First of all, you must get bearer token with `client_id:ocelot.admin,client_secret:secret` and then use the token to send request. Just reference step 4, step 5.)
