@@ -18,4 +18,7 @@ Authorization:Bearer {token}
 6. Use postman to send a request to `localhost:60000/admin/configuration` for getting or modifying ocelot configuration at runtime.
 (First of all, you must get bearer token with `client_id:ocelot.admin,client_secret:secret` and then use the token to send request. Just reference step 4, step 5.)
 
-For more detail visis [.NET Core + Ocelot + IdentityServer4 + Consul 基础架构实现](https://www.cnblogs.com/Zhang-Xiang/p/10437488.html).
+For more detail visis ：
+1. [.NET Core + Ocelot + IdentityServer4 + Consul 基础架构实现](https://www.cnblogs.com/Zhang-Xiang/p/10437488.html).
+2. [APIGatewayDemo][https://github.com/catcherwong-archive/APIGatewayDemo]
+
