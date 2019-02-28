@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +13,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Administration;
 using Ocelot.Provider.Consul;
 
 namespace Ocelot.ApiGateways
@@ -30,7 +32,18 @@ namespace Ocelot.ApiGateways
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddOcelot(new ConfigurationBuilder().AddJsonFile("ocelot.json").Build()).AddConsul();
+            var ocelotBuilder = services.AddOcelot(new ConfigurationBuilder().AddJsonFile("ocelot.json").Build());
+            
+            ocelotBuilder.AddAdministration("/admin", options => {
+                options.Authority = "http://localhost:6003";
+                options.ApiName = "ocelot.admin";
+                // options.SupportedTokens = IdentityServer4.AccessTokenValidation.SupportedTokens.Both;
+                // options.ApiSecret = "secret";
+                options.RequireHttpsMetadata = false;
+            });
+
+            ocelotBuilder.AddConsul();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

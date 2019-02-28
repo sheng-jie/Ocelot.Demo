@@ -22,6 +22,7 @@ namespace Ocelot.Identity.API
             {
                 new ApiResource("catalog.api", "Catalog API"),
                 new ApiResource("basket.api", "Basket API"),
+                new ApiResource("ocelot.admin", "Ocelot Admin"),
             };
         }
 
@@ -54,6 +55,18 @@ namespace Ocelot.Identity.API
                         new Secret("secret".Sha256())
                     },
                     AllowedScopes = { "catalog.api", "basket.api" }
+                },
+
+                new Client
+                {
+                    ClientId = "ocelot.admin",
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+
+                    ClientSecrets =
+                    {
+                        new Secret("secret".Sha256())
+                    },
+                    AllowedScopes = { "ocelot.admin"}
                 },
 
                 // resource owner password grant client
