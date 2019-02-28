@@ -5,7 +5,7 @@
 1. Clone code to your local computer.
 2. Execute command `consul agent -dev -config-dir=consul.d` under the `Ocelot.Demo\Ocelot.ApiGateways` folder. After that visist the [http://localhost:8500/ui](http://localhost:8500/ui) to go to consul dashboard.
 3. Start `Ocelot.Identity.Api`(6003), `Ocelot.ApiGateways`(60000), `Ocelot.Catalog.Api`(6002) and `Ocelot.Basket.Api`(6001) with `dotnet run` command.
-4. Use postman to post a request to `localhost:6003/connect/token` to get barer token. 
+4. Use postman to post a request with the following parameters to `localhost:6003/connect/token` to get bearer token. 
 ```
 client_id:client
 client_secret:secret
@@ -16,4 +16,4 @@ grant_type:client_credentials
 Authorization Bearer {token}
 ```
 
-For more detail visis [.NET Core + Ocelot + IdentityServer4 + Consul 基础架构实现](https://www.cnblogs.com/Zhang-Xiang/p/10437488.html)
+For more detail visis [.NET Core + Ocelot + IdentityServer4 + Consul 基础架构实现](https://www.cnblogs.com/Zhang-Xiang/p/10437488.html).
